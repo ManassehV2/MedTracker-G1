@@ -45,18 +45,18 @@ namespace MedAdvisor.API.Test.ControllerTests
 
         }
 
-        /*  [Fact]
-         public async Task WeatherForecastController_About_NotFound()
-         {
-             var httpStatusResponse = await _client.ExecuteAsync(
-                HttpMethod.Get,
-                $"/WeatherForecast/About?stat={10}",
-                string.Empty
+        [Fact]
+        public async Task WeatherForecastController_About_NotFound()
+        {
+            var httpStatusResponse = await _client.ExecuteAsync(
+               HttpMethod.Get,
+               $"/WeatherForecast/About?stat={10}",
+               string.Empty
 
-            );
-             Assert.Equal(HttpStatusCode.NotFound, httpStatusResponse);
+           );
+            Assert.Equal(HttpStatusCode.NotFound, httpStatusResponse);
 
-         } */
+        }
 
     }
 }
