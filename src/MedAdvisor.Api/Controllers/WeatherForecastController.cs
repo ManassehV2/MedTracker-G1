@@ -10,6 +10,7 @@ public class WeatherForecastController : ControllerBase
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
+    private readonly string privateString;
 
     private readonly ILogger<WeatherForecastController> _logger;
 
@@ -28,5 +29,19 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+    [HttpGet("About")]
+    public IActionResult About([FromQuery] int stat)
+    {
+        if (stat == 1)
+        {
+            return Ok();
+        }
+        else
+        {
+            return NotFound();
+        }
+
+
     }
 }
