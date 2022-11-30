@@ -30,9 +30,17 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
     [HttpGet("About")]
-    public IActionResult About()
+    public IActionResult About([FromQuery] int stat)
     {
-        return Ok();
+        if (stat == 1)
+        {
+            return Ok();
+        }
+        else
+        {
+            return NotFound();
+        }
+
 
     }
 }
