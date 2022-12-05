@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4TSk8+Yvd7RxepkuBZQR55qlL2LNq/WVrUEmhQDGA97fq6DreV1EN7mbnQVBjauaNqqwHWQE4uX75Ecvunr2tA==",
+  "dgSpecHash": "eGngP21Ytsxg+7LUAI9VeoQ/I0BWV1CZ/KP6LNpSEIKQSjFiB98JMTSGNp3azqGRaJ88erX2FSSFONPj7kvKRQ==",
   "success": true,
-  "projectFilePath": "/Users/minase/Desktop/Workspace/AppDevClass/MedAdvisorAPIG1/src/MedAdvisor.Models/MedAdvisor.Models.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dell\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\dell\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\dell\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
