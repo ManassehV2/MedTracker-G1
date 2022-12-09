@@ -1,4 +1,4 @@
-using System.Data.Entity;
+
 namespace MedAdvisor.DataAccess.Mysql
 {
     public class Vaccine

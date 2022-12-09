@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ULtoykZfaAPDLN5jPISVbzo/HNqAalyk1SOxzbDbr2/92u9zne3LQnQ9q0GitVEvt3PmwYsvEFrTT5K4tQJRSA==",
+  "dgSpecHash": "lPO0k1gYnofY75brRBmUnbq7dLd/KWJzsnYD0qSMD2qlQ+x3z9wN5YTZgn+7x6EMPcjFGe+Z9/G0+5kXyfPvZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\dell\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\dell\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\dell\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

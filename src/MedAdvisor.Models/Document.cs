@@ -11,6 +11,7 @@ namespace MedAdvisor.Models
         public int DocId { get; set; }
 
         public string Name { get; set; }
-        public int user_id { get; set; }
+        public string title { get; set; }
+        public int UserId { get; set; }
     }
 }
