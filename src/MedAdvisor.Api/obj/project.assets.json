@@ -1253,6 +1253,19 @@
         "runtime": {
           "bin/placeholder/MedAdvisor.Models.dll": {}
         }
+      },
+      "MedAdvisor.Services.Okta/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MedAdvisor.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MedAdvisor.Services.Okta.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MedAdvisor.Services.Okta.dll": {}
+        }
       }
     }
   },
@@ -3693,12 +3706,18 @@
       "type": "project",
       "path": "../MedAdvisor.Models/MedAdvisor.Models.csproj",
       "msbuildProject": "../MedAdvisor.Models/MedAdvisor.Models.csproj"
+    },
+    "MedAdvisor.Services.Okta/1.0.0": {
+      "type": "project",
+      "path": "../MedAdvisor.Services.Okta/MedAdvisor.Services.Okta.csproj",
+      "msbuildProject": "../MedAdvisor.Services.Okta/MedAdvisor.Services.Okta.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "MedAdvisor.Business >= 1.0.0",
       "MedAdvisor.Models >= 1.0.0",
+      "MedAdvisor.Services.Okta >= 1.0.0",
       "MySql.Data >= 8.0.31",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -3735,6 +3754,9 @@
             },
             "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
               "projectPath": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+            },
+            "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+              "projectPath": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
             }
           }
         }

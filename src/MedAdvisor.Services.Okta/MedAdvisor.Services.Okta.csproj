@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MedAdvisor.Models\MedAdvisor.Models.csproj" />
+  </ItemGroup>
+
 </Project>
