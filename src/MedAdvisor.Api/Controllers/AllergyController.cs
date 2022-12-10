@@ -3,7 +3,7 @@
 using MedAdvisor.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
-using MedAdvisor.Business.AllergyService;
+using MedAdvisor.Services.Okta.AllergyService;
 
 namespace MedAdvisor.Api.Controllers
 {

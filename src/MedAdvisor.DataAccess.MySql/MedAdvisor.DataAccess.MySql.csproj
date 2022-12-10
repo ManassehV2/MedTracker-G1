@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MedAdvisor.Models\MedAdvisor.Models.csproj" />
+    <ProjectReference Include="..\MedAdvisor.Services.Okta\MedAdvisor.Services.Okta.csproj" />
   </ItemGroup>
 
 </Project>

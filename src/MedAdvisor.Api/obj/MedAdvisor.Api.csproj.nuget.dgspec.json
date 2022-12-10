@@ -196,6 +196,9 @@
             "projectReferences": {
               "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
                 "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              },
+              "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+                "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
               }
             }
           }

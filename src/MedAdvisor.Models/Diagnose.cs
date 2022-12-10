@@ -5,6 +5,6 @@ namespace MedAdvisor.DataAccess.Mysql
     {
         public int UserId { get; set; }
         public int DiagnoseId { get; set; }
-        public string DiagnoseName { get; set; }
+        public string DiagnoseName { get; set; } = string.Empty;
     }
 }

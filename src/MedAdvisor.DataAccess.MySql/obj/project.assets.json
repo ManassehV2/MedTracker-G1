@@ -1228,6 +1228,19 @@
         "runtime": {
           "bin/placeholder/MedAdvisor.Models.dll": {}
         }
+      },
+      "MedAdvisor.Services.Okta/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MedAdvisor.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MedAdvisor.Services.Okta.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MedAdvisor.Services.Okta.dll": {}
+        }
       }
     }
   },
@@ -3651,6 +3664,11 @@
       "type": "project",
       "path": "../MedAdvisor.Models/MedAdvisor.Models.csproj",
       "msbuildProject": "../MedAdvisor.Models/MedAdvisor.Models.csproj"
+    },
+    "MedAdvisor.Services.Okta/1.0.0": {
+      "type": "project",
+      "path": "../MedAdvisor.Services.Okta/MedAdvisor.Services.Okta.csproj",
+      "msbuildProject": "../MedAdvisor.Services.Okta/MedAdvisor.Services.Okta.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3658,6 +3676,7 @@
       "AutoMapper >= 12.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "MedAdvisor.Models >= 1.0.0",
+      "MedAdvisor.Services.Okta >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Relational >= 7.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
@@ -3671,11 +3690,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.Mysql\\MedAdvisor.DataAccess.MySql.csproj",
+      "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
       "projectName": "MedAdvisor.DataAccess.MySql",
-      "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.Mysql\\MedAdvisor.DataAccess.MySql.csproj",
+      "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
       "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.Mysql\\obj\\",
+      "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\TOSHIBA\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3694,6 +3713,9 @@
           "projectReferences": {
             "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
               "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+            },
+            "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+              "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
             }
           }
         }

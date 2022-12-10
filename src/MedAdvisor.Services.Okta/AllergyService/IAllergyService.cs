@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace MedAdvisor.Business.AllergyService
+namespace MedAdvisor.Services.Okta.AllergyService
 {
  public  interface IAllergyService
     {

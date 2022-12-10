@@ -1,7 +1,11 @@
 
 global using Microsoft.EntityFrameworkCore;
-using MedAdvisor.Business.AllergyService;
-using MedAdvisor.DataAccess.MySql;
+global using MedAdvisor.DataAccess.MySql;
+using Microsoft.Extensions.Options;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using MedAdvisor.Services.Okta.MedicineService;
+using MedAdvisor.Services.Okta.AllergyService;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +18,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAllergyService, AllergyService>();
-builder.Services.AddDbContext<MedAdvisorDbContext>();
+builder.Services.AddScoped<IMedicineService, MedicineService>();
+builder.Services.AddDbContext<MedAdvisorDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 
 var app = builder.Build();
