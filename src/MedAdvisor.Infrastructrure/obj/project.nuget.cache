@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "lPO0k1gYnofY75brRBmUnbq7dLd/KWJzsnYD0qSMD2qlQ+x3z9wN5YTZgn+7x6EMPcjFGe+Z9/G0+5kXyfPvZA==",
+  "dgSpecHash": "4tLNdw23BhDyaR4L3pcDmuQOjZhaIBWL6/tT8NjhS0+EEgMHjZrekLGrflt8MD9mNc5iSXYIgFoGdvnFdcUNuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+  "projectFilePath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

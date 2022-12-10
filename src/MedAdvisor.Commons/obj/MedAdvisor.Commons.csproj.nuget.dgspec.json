@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {}
+    "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
+    "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
         "projectName": "MedAdvisor.Commons",
-        "projectPath": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Downloads\\MedTracker-G1\\src\\MedAdvisor.Commons\\obj\\",
+        "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+        "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Commons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TOSHIBA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
