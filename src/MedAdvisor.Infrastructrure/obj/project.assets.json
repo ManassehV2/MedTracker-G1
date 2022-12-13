@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/minase/.nuget/packages/": {}
+    "C:\\Users\\TOSHIBA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/minase/Desktop/Workspace/AppDevClass/MedAdvisorAPIG1/src/MedAdvisor.Infrastructrure/MedAdvisor.Infrastructrure.csproj",
+      "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
       "projectName": "MedAdvisor.Infrastructrure",
-      "projectPath": "/Users/minase/Desktop/Workspace/AppDevClass/MedAdvisorAPIG1/src/MedAdvisor.Infrastructrure/MedAdvisor.Infrastructrure.csproj",
-      "packagesPath": "/Users/minase/.nuget/packages/",
-      "outputPath": "/Users/minase/Desktop/Workspace/AppDevClass/MedAdvisorAPIG1/src/MedAdvisor.Infrastructrure/obj/",
+      "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+      "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/minase/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\TOSHIBA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -49,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -58,8 +61,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
