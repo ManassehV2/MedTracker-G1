@@ -1,12 +1,10 @@
-﻿using Azure.Core;
-using MedAdvisor.DataAccess.Mysql;
-using MedAdvisor.DataAccess.MySql;
-using MedAdvisor.Models;
-using Microsoft.AspNetCore.Http;
+﻿
+using MedAdvisor.DataAccess.MySql.DataContext;
+using MedAdvisor.Services.Okta.Interfaces;
+using Microsoft.Extensions.Primitives;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Any;
-using System.Reflection.Metadata.Ecma335;
+using MedAdvisor.Models;
+using MedAdvisor.Infrastructrure.Interfaces;
 
 namespace MedAdvisor.Api.Controllers
 {
@@ -14,97 +12,80 @@ namespace MedAdvisor.Api.Controllers
     [ApiController]
     public class VaccineController : ControllerBase
     {
-        private readonly MedAdvisorDbContext _dbcontext;
+        private readonly IVaccineRepository _VaccineRepository;
+        private readonly IVaccineService _VaccineService;
+        private readonly IUserServices _userService;
+        private readonly IAuthService _AuthService;
+        private readonly AppDbContext _db;
 
-        public VaccineController(MedAdvisorDbContext dbcontext)
+        public VaccineController(
+            IVaccineRepository vaccineRepository,
+            IVaccineService vaccineService,
+            IUserServices userService,
+            IAuthService authService,
+            AppDbContext dbContext
+            )
         {
-            _dbcontext = dbcontext;
-        }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Vaccine>>> GetVaccines()
-        {
-            if (_dbcontext.Vaccines == null)
-            {
-                return NotFound();
-            }
-            return await _dbcontext.Vaccines.ToListAsync();
-        }
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Vaccine>> GetVaccine(int id)
-        {
-            if (_dbcontext.Vaccines == null)
-            {
-                return NotFound();
-            }
-
-            var vaccine = await _dbcontext.Vaccines.FindAsync(id);
-            if (vaccine == null)
-            {
-                return NotFound();
-            }
-            return vaccine;
+            _VaccineRepository = vaccineRepository;
+            _VaccineService = vaccineService;
+            _userService = userService;
+            _AuthService = authService;
+            _db = dbContext;
 
         }
+
+
         [HttpPost]
-        public async Task<ActionResult<Vaccine>> PostVaccine(Vaccine vaccine)
+        [Route("add/{id}")]
+        public async Task<IActionResult> AddVaccine([FromRoute] Guid id)
         {
-            _dbcontext.Vaccines.Add(vaccine);
-            await _dbcontext.SaveChangesAsync();
-            return Ok(vaccine);
-        }
-        [HttpPut]
-        public async Task<IActionResult> Vaccine(int id, Vaccine request)
 
-        {
-            var vaccine = await _dbcontext.Vaccines.FindAsync(id);
-            if (id != vaccine.VaccineId)
+            Request.Headers.TryGetValue("Authorization", out StringValues token);
+            if (String.IsNullOrEmpty(token))
             {
-                return BadRequest();
+                return BadRequest("un authorized user");
             }
-            try
-            {
-                vaccine.UserId = request.UserId;
-                vaccine.VaccineId = request.VaccineId;
-                vaccine.VaccineName = request.VaccineName;
 
-                await _dbcontext.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!VaccineAvailable(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+            var User_Id = _AuthService.GetId(token);
+            var vaccine = await _VaccineService.GetVaccine(id);
+            var user = await _userService.GetUserById(User_Id);
 
-            }
-            return Ok();
-        }
-        private bool VaccineAvailable(int id)
-        {
-            return (_dbcontext.Vaccines?.Any(x => x.VaccineId == id)).GetValueOrDefault();
+            var saved_user = await _VaccineRepository.AddVaccineAsync(user, vaccine);
+            return Ok(user);
+
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteVaccine(int id)
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteVaccine([FromRoute] Guid id)
         {
-            if (_dbcontext.Vaccines == null)
+            Request.Headers.TryGetValue("Authorization", out StringValues token);
+            if (String.IsNullOrEmpty(token))
             {
-                return NotFound();
+                return BadRequest("un authorized user");
             }
-            var vaccine = await _dbcontext.Vaccines.FindAsync(id);
-            if (vaccine == null)
-            {
-                return NotFound();
-            }
-            _dbcontext.Vaccines.Remove(vaccine);
-            await _dbcontext.SaveChangesAsync();
-            return Ok();
+
+            var User_Id = _AuthService.GetId(token);
+            var vaccine = await _VaccineService.GetVaccine(id);
+            var user = await _userService.GetUserById(User_Id);
+
+            var updated_user = await _VaccineRepository.DeleteVaccineAsync(user, vaccine);
+            return Ok(updated_user);
+
         }
 
+        [HttpGet]
+        [Route("search")]
+        public async Task<IEnumerable<Vaccine>> search(string name)
+        {
+            var vaccines_list = await _VaccineRepository.SearchVaccines(name);
+            return vaccines_list;
+
+        }
     }
-
 }
+
+
+
+

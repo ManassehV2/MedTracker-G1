@@ -1,12 +1,10 @@
-﻿using Azure.Core;
-using MedAdvisor.DataAccess.Mysql;
-using MedAdvisor.DataAccess.MySql;
-using MedAdvisor.Models;
-using Microsoft.AspNetCore.Http;
+﻿
+using MedAdvisor.DataAccess.MySql.DataContext;
+using MedAdvisor.Infrastructrure.Interfaces;
+using MedAdvisor.Services.Okta.Interfaces;
+using Microsoft.Extensions.Primitives;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Any;
-using System.Reflection.Metadata.Ecma335;
+using MedAdvisor.Models;
 
 namespace MedAdvisor.Api.Controllers
 {
@@ -14,97 +12,81 @@ namespace MedAdvisor.Api.Controllers
     [ApiController]
     public class MedicineController : ControllerBase
     {
-        private readonly MedAdvisorDbContext _dbcontext;
+        private readonly ImedicineRepository _MedicineRepository;
+        private readonly IMedicineService _MedicineService;
+        private readonly IUserServices _userService;
+        private readonly IAuthService _AuthService;
+        private readonly AppDbContext _db;
 
-        public MedicineController(MedAdvisorDbContext dbcontext)
+        public MedicineController(
+            ImedicineRepository medicineRepository,
+            IMedicineService medicineService,
+            IUserServices userService,
+            IAuthService authService,
+            AppDbContext dbContext
+            )
         {
-            _dbcontext = dbcontext;
-        }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Medicine>>> GetMedicines()
-        {
-            if (_dbcontext.Medicines == null)
-            {
-                return NotFound();
-            }
-            return await _dbcontext.Medicines.ToListAsync();
-        }
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Medicine>> GetMedicine(int id)
-        {
-            if (_dbcontext.Medicines == null)
-            {
-                return NotFound();
-            }
-
-            var medicine = await _dbcontext.Medicines.FindAsync(id);
-            if (medicine == null)
-            {
-                return NotFound();
-            }
-            return medicine;
+            _MedicineRepository = medicineRepository;
+            _MedicineService = medicineService;
+            _userService = userService;
+            _AuthService = authService;
+            _db = dbContext;
 
         }
+
+
         [HttpPost]
-        public async Task<ActionResult<Medicine>> PostMedicine(Medicine medicine)
+        [Route("add/{id}")]
+        public async Task<IActionResult> AddMedicine([FromRoute] Guid id)
         {
-            _dbcontext.Medicines.Add(medicine);
-            await _dbcontext.SaveChangesAsync();
-            return Ok(medicine);
-        }
-        [HttpPut]
-        public async Task<IActionResult> Medicine(int id, Medicine request)
 
-        {
-            var medicine = await _dbcontext.Medicines.FindAsync(id);
-            if (id != medicine.MedicineId)
+            Request.Headers.TryGetValue("Authorization", out StringValues token);
+            if (String.IsNullOrEmpty(token))
             {
-                return BadRequest();
+                return BadRequest("un authorized user");
             }
-            try
-            {
-                medicine.UserId = request.UserId;
-                medicine.MedicineId = request.MedicineId;
-                medicine.MedicineName = request.MedicineName;
 
-                await _dbcontext.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MedicineAvailable(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+            var User_Id = _AuthService.GetId(token);
+            var medicine = await _MedicineService.GetMedicine(id);
+            var user = await _userService.GetUserById(User_Id);
 
-            }
-            return Ok();
-        }
-        private bool MedicineAvailable(int id)
-        {
-            return (_dbcontext.Medicines?.Any(x => x.MedicineId == id)).GetValueOrDefault();
+            var saved_user = await _MedicineRepository.AddMedicineAsync(user, medicine);
+            return Ok(user);
+
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMedicine(int id)
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteMedicine([FromRoute] Guid id)
         {
-            if (_dbcontext.Medicines == null)
+            Request.Headers.TryGetValue("Authorization", out StringValues token);
+            if (String.IsNullOrEmpty(token))
             {
-                return NotFound();
+                return BadRequest("un authorized user");
             }
-            var medicine = await _dbcontext.Medicines.FindAsync(id);
-            if (medicine == null)
-            {
-                return NotFound();
-            }
-            _dbcontext.Medicines.Remove(medicine);
-            await _dbcontext.SaveChangesAsync();
-            return Ok();
+
+            var User_Id = _AuthService.GetId(token);
+            var medicine = await _MedicineService.GetMedicine(id);
+            var user = await _userService.GetUserById(User_Id);
+
+            var updated_user = await _MedicineRepository.DeleteMedicineAsync(user, medicine);
+            return Ok(updated_user);
+
         }
 
+        [HttpGet]
+        [Route("search")]
+        public async Task<IEnumerable<Medicine>> search(string name)
+        {
+            var medicine_list = await _MedicineRepository.SearchMedicines(name);
+            return medicine_list;
+
+        }
     }
-
 }
+
+
+
+
+

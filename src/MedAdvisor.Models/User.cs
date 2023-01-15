@@ -1,34 +1,19 @@
-﻿
-using System.ComponentModel.DataAnnotations;
-
-namespace MedAdvisor.DataAccess.Mysql
+﻿namespace MedAdvisor.Models
 {
-    public enum Gender
+  public class User
     {
-        Male, Female
-    }
-    public class User
-    {
-        public int UserId { get; set; }
-        [Required]
-        public string FirstName { get; set; } = string.Empty;
-        [Required]
-
-        public string SecondName { get; set; } = string.Empty;
-        public DateTime Date { get; set; }
-        public Gender Gender { get; set; }
-        public string BirthDate { get; set; } = string.Empty;
-        public bool OrganDonor { get; set; }
-        public int SocialSecurityNumber { get; set; }
-        public string Nationality { get; set; } = string.Empty;
-        [Phone]
-        public int Telephone { get; set; }
-        public string PostalAddress { get; set; } = string.Empty;
-        public string TravelInsurance { get; set; } = string.Empty;
-        public int PostalNumber { get; set; }
-        public string AlarmTelephone { get; set; } = string.Empty;
-        public int EmergencyContacts { get; set; }
-        public string OtherInformation { get; set; } = string.Empty;
+        public Guid UserId { get; set; }
+        public string FullName { get; set; } = string.Empty;
+        public String Email { get; set; } = string.Empty;
+        public byte[]? PasswordHash { get; set; }
+        public byte[]? PasswordSalt { get; set; }
+        public ICollection<Allergy>? Allergies { get; set; }
+        public ICollection<Medicine>? Medicines { get; set; }
+        public ICollection<Diagnoses>? Diagnoses { get; set; }
+        public ICollection<Vaccine>? Vaccines { get; set; }
+        public ICollection<Document>? Documents { get; set; }
+        public UserProfile? Profile { get; set; }
 
     }
 }
+

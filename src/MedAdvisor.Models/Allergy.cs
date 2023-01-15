@@ -1,10 +1,14 @@
+﻿
 
 namespace MedAdvisor.Models
 {
     public class Allergy
     {
-        public int UserId { get; set; }
-        public int AllergyId { get; set; }
-        public string AllergyName { get; set; } = string.Empty;
+        public Guid Id  { get; set; }
+        public string? Name { get; set; }
+        public string? Code { get; set; }
+        public ICollection<User>? Users { get; set; }
+
+
     }
 }
