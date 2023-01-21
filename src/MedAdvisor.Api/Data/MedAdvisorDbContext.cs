@@ -1,6 +1,7 @@
 ﻿global using Microsoft.EntityFrameworkCore;
 using MedAdvisor.DataAccess.Mysql;
 using MedAdvisor.Models;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,8 @@ namespace MedAdvisor.DataAccess.MySql
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=MedTracker;Trusted_Connection=true;TrustServerCertificate=true;");
+            base.OnConfiguring(optionsBuilder); 
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=MedTracker;Trusted_Connection=True;TrustServerCertificate=true;");
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Allergy> Allergies { get; set; }

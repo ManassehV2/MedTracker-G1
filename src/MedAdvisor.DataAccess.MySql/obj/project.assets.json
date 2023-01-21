@@ -1220,7 +1220,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0"
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2"
         },
         "compile": {
           "bin/placeholder/MedAdvisor.Models.dll": {}
@@ -1233,7 +1234,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "MedAdvisor.Models": "1.0.0"
+          "MedAdvisor.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2"
         },
         "compile": {
           "bin/placeholder/MedAdvisor.Services.Okta.dll": {}
@@ -3678,6 +3681,7 @@
       "MedAdvisor.Models >= 1.0.0",
       "MedAdvisor.Services.Okta >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0",
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Relational >= 7.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.0",
@@ -3685,19 +3689,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TOSHIBA\\.nuget\\packages\\": {}
+    "C:\\Users\\helen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
+      "projectUniqueName": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
       "projectName": "MedAdvisor.DataAccess.MySql",
-      "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
-      "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
+      "projectPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
+      "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\TOSHIBA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3711,11 +3715,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-              "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+            "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+              "projectPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
             },
-            "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
-              "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
+            "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+              "projectPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
             }
           }
         }
@@ -3739,6 +3743,12 @@
             "version": "[12.0.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.0, )"
           },
@@ -3777,7 +3787,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -3788,6 +3798,42 @@
       "warningLevel": 1,
       "message": "Detected package version outside of dependency constraint: Pomelo.EntityFrameworkCore.MySql 6.0.2 requires Microsoft.EntityFrameworkCore.Relational (>= 6.0.7 && < 7.0.0) but version Microsoft.EntityFrameworkCore.Relational 7.0.0 was resolved.",
       "libraryId": "Microsoft.EntityFrameworkCore.Relational",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 7.0.2 to 7.0.0. Reference the package directly from the project to select a different version. \r\n MedAdvisor.DataAccess.MySql -> MedAdvisor.Models -> Microsoft.EntityFrameworkCore (>= 7.0.2) \r\n MedAdvisor.DataAccess.MySql -> Microsoft.EntityFrameworkCore (>= 7.0.0)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 7.0.2 to 7.0.0. Reference the package directly from the project to select a different version. \r\n MedAdvisor.DataAccess.MySql -> MedAdvisor.Models -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.2) \r\n MedAdvisor.DataAccess.MySql -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.0)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 7.0.2 to 7.0.0. Reference the package directly from the project to select a different version. \r\n MedAdvisor.DataAccess.MySql -> MedAdvisor.Services.Okta -> Microsoft.EntityFrameworkCore (>= 7.0.2) \r\n MedAdvisor.DataAccess.MySql -> Microsoft.EntityFrameworkCore (>= 7.0.0)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 7.0.2 to 7.0.0. Reference the package directly from the project to select a different version. \r\n MedAdvisor.DataAccess.MySql -> MedAdvisor.Services.Okta -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.2) \r\n MedAdvisor.DataAccess.MySql -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.0)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
       "targetGraphs": [
         "net6.0"
       ]

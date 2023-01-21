@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {}
+    "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
+    "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
         "projectName": "MedAdvisor.Infrastructrure",
-        "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
-        "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Infrastructrure\\obj\\",
+        "projectPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+        "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TOSHIBA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

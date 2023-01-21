@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MedAdvisor.Services.Okta
-build_property.ProjectDir = C:\Users\TOSHIBA\Source\Repos\Project-Dotnet\src\MedAdvisor.Services.Okta\
+build_property.ProjectDir = C:\Users\helen\Source\Repos\MedTracker-G1\src\MedAdvisor.Services.Okta\

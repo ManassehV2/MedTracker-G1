@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {}
+    "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {
+    "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
         "projectName": "MedAdvisor.Business",
-        "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
-        "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Business\\obj\\",
+        "projectPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
+        "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TOSHIBA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+                "projectPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
               }
             }
           }
@@ -73,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+    "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
         "projectName": "MedAdvisor.Models",
-        "projectPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
-        "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TOSHIBA\\Source\\Repos\\Project-Dotnet\\src\\MedAdvisor.Models\\obj\\",
+        "projectPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\helen\\Source\\Repos\\MedTracker-G1\\src\\MedAdvisor.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TOSHIBA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,15 +113,19 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -146,7 +150,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
