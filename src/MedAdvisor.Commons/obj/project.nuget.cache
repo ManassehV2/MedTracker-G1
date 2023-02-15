@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NdZguOMt6zvWEZFgrDlicbtXI1TP/hFjgKoMFbXWf7ycXQxbY/tNYPNJ7QeK+ydLjHF5cKTgz4QmQPH0qXQQxg==",
+  "dgSpecHash": "WB6nGmF2fOg8AxrQ7TVDwhl9YytNUvW3xYQ2I42TTD4CR5Qtm2oeU5meZgEOQtzb+VOWwH7WLtw/2UucRzt3rg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
-    "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

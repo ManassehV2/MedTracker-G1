@@ -1,13 +1,14 @@
-﻿
-using MedAdvisor.Infrastructrure.Interfaces;
-using MedAdvisor.Services.Okta.Interfaces;
-using Microsoft.Extensions.Primitives;
-using MedAdvisor.Api.Responses;
+using System.Reflection.Metadata;
+using System;
+using System.IO;
 using Microsoft.AspNetCore.Mvc;
-using MedAdvisor.Api.Models;
-using MedAdvisor.Models;
-using AutoMapper;
-
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Microsoft.Extensions.Configuration;
+using System.Threading.Tasks;
+using MedAdvisor.DataAccess.MySql;
+using MedAdvisor.Models.Models;
+using MedAdvisor.Api.DataClass;
 
 namespace MedAdvisor.Api.Controllers
 {
@@ -15,124 +16,177 @@ namespace MedAdvisor.Api.Controllers
     [ApiController]
     public class DocumentController : ControllerBase
     {
-        private readonly IDocumentRepository _documentRepository;
-        private readonly IDocumentService _documentService;
-        private readonly IWebHostEnvironment _hostEnv;
-        private readonly IUserServices _userService;
-        private readonly IAuthService _AuthService;
-        private readonly IConfiguration _config;
-        private readonly IMapper _mapper;
+        private readonly IConfiguration _configuration;
+        private readonly IDocumentRepository _repository;
 
-        public DocumentController(
-            IDocumentRepository documentRepository,
-            IDocumentService documentService,
-            IUserServices userService,
-            IAuthService authService,
-            IWebHostEnvironment env,
-            IConfiguration config,
-            IMapper mapper
 
-            )
+        public DocumentController(IConfiguration configuration, IDocumentRepository repository)
         {
-            _documentRepository = documentRepository;
-            _documentService = documentService;
-            _AuthService = authService;
-            _userService = userService;
-            _mapper = mapper;
-            _config = config;
-            _hostEnv = env;
+            _configuration = configuration;
+            _repository = repository;
 
         }
-
-
 
         [HttpPost]
-        [Route("add")]
-
-        public async Task<IActionResult> AddDocument([FromForm] FileUploadDto document)
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> UploadFile([FromForm] DocumentData documentData, [FromHeader] string Authorization)
         {
-
-            Request.Headers.TryGetValue("Authorization", out StringValues token);
-            if (String.IsNullOrEmpty(token))
+            try
             {
-                return BadRequest("un authorized user");
+                int userId = UserFromToken.getId(Authorization);
+                var uploadResult = await CloudinaryUploadFile(documentData);
+                var createdDocument = CreateDocumentObject(documentData, uploadResult.ToString(), userId);
+
+
+
+                _repository.Create(createdDocument);
+                return Ok("Document created successfully");
             }
-            var User_Id = _AuthService.GetId(token);
-            var user = await _userService.GetUserById(User_Id);
-            if (user == null)
+            catch (Exception ex)
             {
-                return BadRequest(new ErrorResponse(404, "user not found"));
+
+                return BadRequest(ex.Message);
+
             }
-            long ticks = DateTime.Now.Ticks;
-            var rootPath = _hostEnv.ContentRootPath;
-            var baseUrl = _config.GetValue<string>("Domain:BaseUrl");
-            var absolutePath = _documentService.getAbsolutePath(rootPath, document.File.FileName,ticks);
-            var dbPath = _documentService.getDbPath(baseUrl, document.File.FileName,ticks);
-
-
-            if (document.File?.Length == 0)
-            {
-                return BadRequest(new ErrorResponse(200, "please select file"));
-            }
-
-            using (var stream = new FileStream(absolutePath, FileMode.Create))
-            {
-                 document.File.CopyTo(stream);
-            }
-
-            Document new_document = new();
-            _mapper.Map(document, new_document);
-            new_document.filePath = dbPath;
-            var doc =  await _documentService.uploadFile(user, new_document);
-            return Ok(doc);
         }
-
-        [HttpPut]
-        [Route("Update/{id}")]
-        public async Task<IActionResult> UpdateDocument([FromForm] UpdateDocumentDto document, Guid id )
+        public Models.Models.Document CreateDocumentObject(DocumentData documentData, string fileUrl, int userId)
         {
-            var fetched_document = await _documentRepository.GetDocumentById(id);
-            if (fetched_document == null)
+            var createdDocument = new Models.Models.Document
             {
-                return BadRequest(new ErrorResponse(404, "document not found"));
-            }
-            long ticks = DateTime.Now.Ticks;
-            var rootPath = _hostEnv.ContentRootPath;
-            var baseUrl = _config.GetValue<string>("Domain:BaseUrl");
-            var absolutePath = _documentService.getAbsolutePath(rootPath, document.File.FileName,ticks);
-            var dbPath = _documentService.getDbPath(baseUrl, document.File.FileName,ticks);
-
-            if (document.File?.Length == 0)
-            {
-                return BadRequest(new ErrorResponse(200, "please select file"));
-            }
-            using (var stream = new FileStream(absolutePath, FileMode.Create))
-            {
-                document?.File.CopyTo(stream);
-            }
-
-            _mapper.Map(document, fetched_document);
-            fetched_document.filePath = dbPath;
-            var doc = await _documentService.updateDocument(fetched_document);
-            return Ok(doc);
+                FileName = fileUrl,
+                Title = documentData.title,
+                UserId = userId,
+                Type = documentData.type,
+                Description = documentData.description!
+            };
+            return createdDocument;
 
         }
 
-        [HttpDelete]
-        [Route("{id}")]
-        public async Task<IActionResult> DeleteDocument([FromRoute] Guid id)
+
+        public async Task<string> CloudinaryUploadFile(DocumentData documentData)
         {
-            var document = await _documentService.getDocumentById(id);
-            if (document == null) {
-                return BadRequest(new ErrorResponse(404,"document not found"));
-            }
-            await _documentRepository.DeleteDocumentAsync(document);
-            return Ok(document);
+            var account = new Account(
+                    _configuration.GetSection("CloudinarySettings:CloudName").Value,
+                    _configuration.GetSection("CloudinarySettings:ApiKey").Value,
+                    _configuration.GetSection("CloudinarySettings:ApiSecret").Value
+                );
+
+            var cloudinary = new Cloudinary(account);
+
+            var fileStream = documentData.file.OpenReadStream();
+            var fileName = documentData.file.FileName;
+
+
+            var uploadParams = new RawUploadParams()
+            {
+                File = new FileDescription(fileName, fileStream),
+            };
+
+            var uploadResult = await cloudinary.UploadAsync(uploadParams);
+
+            return uploadResult.SecureUri.AbsoluteUri;
+
         }
+
+
+        [HttpGet]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public IActionResult Get([FromHeader] string Authorization)
+        {
+            try
+            {
+                int userid = UserFromToken.getId(Authorization);
+                var documents = _repository.GetMyDocuments(userid);
+                return Ok(documents);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpDelete("{documentId}")]
+
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult Delete([FromHeader] string Authorization, int documentId)
+        {
+            try
+            {
+                int userId = UserFromToken.getId(Authorization);
+                Console.Write(documentId);
+                var deleted = _repository.Delete(userId, documentId);
+                return deleted ? Ok("Document deleted successfully") : throw new Exception("Document not deleted");
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+
+        }
+
+        [HttpPatch("{documentId}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> UpdateDocument([FromHeader] string Authorization, [FromForm] DocumentData document, int documentId)
+
+        {
+            try
+            {
+
+                int userId = UserFromToken.getId(Authorization);
+
+                var uploadResult = await CloudinaryUploadFile(document);
+
+                var exsistingDocument = new Models.Models.Document
+                {
+                    Id = documentId,
+                    FileName = uploadResult.ToString(),
+                    Title = document.title,
+                    UserId = userId,
+                    Type = document.type,
+                    Description = document.description!
+                };
+                _repository.Update(exsistingDocument);
+                return Ok("Document updated successfully");
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("{documentId}")]
+
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+
+        public async Task<IActionResult> GetById([FromHeader] string Authorization, int documentId)
+        {
+            try
+            {
+                int userId = UserFromToken.getId(Authorization);
+
+                var document = _repository.GetById(documentId);
+                return Ok(document);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
 
     }
 }
-
-
-
-

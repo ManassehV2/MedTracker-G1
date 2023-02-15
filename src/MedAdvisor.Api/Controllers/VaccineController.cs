@@ -1,91 +1,115 @@
-﻿
-using MedAdvisor.DataAccess.MySql.DataContext;
-using MedAdvisor.Services.Okta.Interfaces;
-using Microsoft.Extensions.Primitives;
+using MedAdvisor.Api.DataClass;
+using MedAdvisor.DataAccess.MySql;
+using MedAdvisor.Models.Models;
 using Microsoft.AspNetCore.Mvc;
-using MedAdvisor.Models;
-using MedAdvisor.Infrastructrure.Interfaces;
 
 namespace MedAdvisor.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class VaccineController : ControllerBase
+    public class VaccineController : Controller
     {
-        private readonly IVaccineRepository _VaccineRepository;
-        private readonly IVaccineService _VaccineService;
-        private readonly IUserServices _userService;
-        private readonly IAuthService _AuthService;
-        private readonly AppDbContext _db;
-
-        public VaccineController(
-            IVaccineRepository vaccineRepository,
-            IVaccineService vaccineService,
-            IUserServices userService,
-            IAuthService authService,
-            AppDbContext dbContext
-            )
+        private readonly IUserVaccineRepository _repo;
+        public VaccineController(IUserVaccineRepository repo)
         {
-            _VaccineRepository = vaccineRepository;
-            _VaccineService = vaccineService;
-            _userService = userService;
-            _AuthService = authService;
-            _db = dbContext;
+            _repo = repo;
+        }
+
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<Vaccine>))]
+        public IActionResult GetVaccine([FromHeader] string Authorization)
+
+        {
+            try
+            {
+                int userid = UserFromToken.getId(Authorization);
+
+
+                ICollection<Vaccine> result = _repo.GetUserVaccines(userid);
+
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+
+                return BadRequest(ModelState);
+
+            }
 
         }
 
 
         [HttpPost]
-        [Route("add/{id}")]
-        public async Task<IActionResult> AddVaccine([FromRoute] Guid id)
-        {
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
 
-            Request.Headers.TryGetValue("Authorization", out StringValues token);
-            if (String.IsNullOrEmpty(token))
+        public IActionResult AddVaccine([FromBody] VaccineData data, [FromHeader] string Authorization)
+
+        {
+            if (data == null)
             {
-                return BadRequest("un authorized user");
+
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                int userId = UserFromToken.getId(Authorization);
+                bool result = _repo.AddVaccine(userId, data.vaccineId);
+                if (!result)
+                {
+                    ModelState.AddModelError("", "bad request");
+                    return BadRequest(ModelState);
+                }
+                return Ok("Successfully added");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return BadRequest(ModelState);
+
             }
 
-            var User_Id = _AuthService.GetId(token);
-            var vaccine = await _VaccineService.GetVaccine(id);
-            var user = await _userService.GetUserById(User_Id);
-
-            var saved_user = await _VaccineRepository.AddVaccineAsync(user, vaccine);
-            return Ok(user);
 
         }
 
+        [HttpPost("delete")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        public IActionResult DeleteVaccine([FromBody] VaccineDeleteData dData, [FromHeader] string Authorization)
 
-        [HttpDelete]
-        [Route("{id}")]
-        public async Task<IActionResult> DeleteVaccine([FromRoute] Guid id)
         {
-            Request.Headers.TryGetValue("Authorization", out StringValues token);
-            if (String.IsNullOrEmpty(token))
+            if (dData == null)
             {
-                return BadRequest("un authorized user");
+                return BadRequest(ModelState);
             }
+            try
+            {
+                int userId = UserFromToken.getId(Authorization);
 
-            var User_Id = _AuthService.GetId(token);
-            var vaccine = await _VaccineService.GetVaccine(id);
-            var user = await _userService.GetUserById(User_Id);
+                bool result = _repo.RemoveVaccines(userId, dData.vaccineId);
+                if (!result)
+                {
+                    ModelState.AddModelError("", "bad request");
+                    return BadRequest(ModelState);
 
-            var updated_user = await _VaccineRepository.DeleteVaccineAsync(user, vaccine);
-            return Ok(updated_user);
+                }
+                return NoContent();
 
-        }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return BadRequest(ModelState);
 
-        [HttpGet]
-        [Route("search")]
-        public async Task<IEnumerable<Vaccine>> search(string name)
-        {
-            var vaccines_list = await _VaccineRepository.SearchVaccines(name);
-            return vaccines_list;
-
+            }
         }
     }
 }
-
-
-
-

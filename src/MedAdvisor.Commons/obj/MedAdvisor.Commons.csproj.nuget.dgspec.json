@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {}
+    "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
+    "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+        "projectUniqueName": "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
         "projectName": "MedAdvisor.Commons",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\obj\\",
+        "projectPath": "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Commons\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,16 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.Extensions.Options": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -70,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

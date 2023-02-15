@@ -1,92 +1,115 @@
-﻿
-using MedAdvisor.DataAccess.MySql.DataContext;
-using MedAdvisor.Infrastructrure.Interfaces;
-using MedAdvisor.Services.Okta.Interfaces;
-using Microsoft.Extensions.Primitives;
+using MedAdvisor.Api.DataClass;
+using MedAdvisor.DataAccess.MySql;
+using MedAdvisor.Models.Models;
 using Microsoft.AspNetCore.Mvc;
-using MedAdvisor.Models;
 
 namespace MedAdvisor.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MedicineController : ControllerBase
+    public class MedicineController : Controller
     {
-        private readonly ImedicineRepository _MedicineRepository;
-        private readonly IMedicineService _MedicineService;
-        private readonly IUserServices _userService;
-        private readonly IAuthService _AuthService;
-        private readonly AppDbContext _db;
-
-        public MedicineController(
-            ImedicineRepository medicineRepository,
-            IMedicineService medicineService,
-            IUserServices userService,
-            IAuthService authService,
-            AppDbContext dbContext
-            )
+        private readonly IUserMedicineRepository _repo;
+        public MedicineController(IUserMedicineRepository repo)
         {
-            _MedicineRepository = medicineRepository;
-            _MedicineService = medicineService;
-            _userService = userService;
-            _AuthService = authService;
-            _db = dbContext;
+            _repo = repo;
+        }
+
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<Medicine>))]
+        public IActionResult GetMedicine([FromHeader] string Authorization)
+
+        {
+            try
+            {
+                int userid = UserFromToken.getId(Authorization);
+
+
+                ICollection<Medicine> result = _repo.GetUserMedicines(userid);
+
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+
+                return BadRequest(ModelState);
+
+            }
 
         }
 
 
         [HttpPost]
-        [Route("add/{id}")]
-        public async Task<IActionResult> AddMedicine([FromRoute] Guid id)
-        {
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
 
-            Request.Headers.TryGetValue("Authorization", out StringValues token);
-            if (String.IsNullOrEmpty(token))
+        public IActionResult AddMedicine([FromBody] MedicineData data, [FromHeader] string Authorization)
+
+        {
+            if (data == null)
             {
-                return BadRequest("un authorized user");
+
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                int userId = UserFromToken.getId(Authorization);
+                bool result = _repo.AddMedicine(userId, data.medicineId);
+                if (!result)
+                {
+                    ModelState.AddModelError("", "bad request");
+                    return BadRequest(ModelState);
+                }
+                return Ok("Successfully added");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return BadRequest(ModelState);
+
             }
 
-            var User_Id = _AuthService.GetId(token);
-            var medicine = await _MedicineService.GetMedicine(id);
-            var user = await _userService.GetUserById(User_Id);
-
-            var saved_user = await _MedicineRepository.AddMedicineAsync(user, medicine);
-            return Ok(user);
 
         }
 
+        [HttpPost("delete")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        public IActionResult DeleteMedicine([FromBody] MedicineDeleteData dData, [FromHeader] string Authorization)
 
-        [HttpDelete]
-        [Route("{id}")]
-        public async Task<IActionResult> DeleteMedicine([FromRoute] Guid id)
         {
-            Request.Headers.TryGetValue("Authorization", out StringValues token);
-            if (String.IsNullOrEmpty(token))
+            if (dData == null)
             {
-                return BadRequest("un authorized user");
+                return BadRequest(ModelState);
             }
+            try
+            {
+                int userId = UserFromToken.getId(Authorization);
 
-            var User_Id = _AuthService.GetId(token);
-            var medicine = await _MedicineService.GetMedicine(id);
-            var user = await _userService.GetUserById(User_Id);
+                bool result = _repo.RemoveMedicines(userId, dData.medicineId);
+                if (!result)
+                {
+                    ModelState.AddModelError("", "bad request");
+                    return BadRequest(ModelState);
 
-            var updated_user = await _MedicineRepository.DeleteMedicineAsync(user, medicine);
-            return Ok(updated_user);
+                }
+                return NoContent();
 
-        }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return BadRequest(ModelState);
 
-        [HttpGet]
-        [Route("search")]
-        public async Task<IEnumerable<Medicine>> search(string name)
-        {
-            var medicine_list = await _MedicineRepository.SearchMedicines(name);
-            return medicine_list;
-
+            }
         }
     }
 }
-
-
-
-
-

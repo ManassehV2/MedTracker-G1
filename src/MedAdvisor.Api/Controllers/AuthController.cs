@@ -1,128 +1,101 @@
-﻿using MedAdvisor.DataAccess.MySql.Repositories.Users;
-using MedAdvisor.Services.Okta.Interfaces;
-using System.Security.Cryptography;
-using MedAdvisor.Api.Responses;
 using Microsoft.AspNetCore.Mvc;
-using MedAdvisor.Api.Dtos;
-using MedAdvisor.Models;
-using System.Text;
 
+using System.Security.Cryptography;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using MedAdvisor.Models.Models;
+using MedAdvisor.DataAccess.MySql;
 
 namespace MedAdvisor.Api.Controllers;
 
 [ApiController]
-[Route("api/user/[controller]")]
+[Route("api/auth")]
 public class AuthController : ControllerBase
 {
+    private readonly IConfiguration _config;
     private readonly IUserRepository _userRepository;
-    private readonly IUserServices _userService;
-    private readonly IAuthService _authService;
 
-    public AuthController(
-        IUserRepository userRepository,
-        IUserServices userService,
-        IAuthService authService
-       
-        )
+    public AuthController(IConfiguration config, IUserRepository userRepository)
+
     {
+        _config = config;
         _userRepository = userRepository;
-        _authService = authService;
-        _userService = userService;
     }
 
-   
-
-    [HttpPost]
-    [Route("register")]
-    public async Task<IActionResult> Register([FromBody] UserRegistrationDto requestDto)
+    public User createUserDto(UserDto request)
     {
-        if (ModelState.IsValid)
+        var encoder = new HMACSHA512();
+        byte[] passwordSalt = encoder.Key;
+        byte[] passwordHash = encoder.ComputeHash(System.Text.Encoding.UTF8.GetBytes(request.Password));
+        var newUser = new User()
         {
-            var user_exist = await _userService.GetUserByEmail(requestDto.Email);
-            
-            if (user_exist == null)
+            Email = request.Email,
+            HashedPassword = passwordHash,
+            Salt = passwordSalt
+        };
+
+        return newUser;
+    }
+
+
+    [HttpPost("signup")]
+    public IActionResult signup(UserDto request)
+    {
+        var newUser = createUserDto(request);
+
+        _userRepository.CreateUser(newUser);
+
+        return Ok();
+    }
+
+
+    [HttpPost("login")]
+    public IActionResult login(UserDto request)
+    {
+        try
+        {
+            if (!_userRepository.Exists(request.Email))
             {
-                var encoder = new HMACSHA512();
-                byte[] passwordSalt = encoder.Key;
-                byte[] passwordHash = encoder.ComputeHash(
-                        Encoding.UTF8.GetBytes(requestDto.Password));
+                var newUser = createUserDto(request);
+                _userRepository.CreateUser(newUser);
 
-                // creating new user
-                var new_user = new User()
-                {
-                    Email = requestDto.Email,
-                    FullName = requestDto.FirstName + " " + requestDto.LastName,
-                    PasswordHash = passwordHash,
-                    PasswordSalt = passwordSalt
-                };
-
-                 var user = await _userRepository.AddUserAsync(new_user);
-                return Ok(new RegistrationResponse("success",user));
             }
-            return BadRequest(" email alerady exists ");
+
+            var user = _userRepository.GetUserByEmail(request.Email);
+
+            var encoder = new HMACSHA512(user.Salt);
+            var computedHash = encoder.ComputeHash(System.Text.Encoding.UTF8.GetBytes(request.Password));
+            if (!computedHash.SequenceEqual(user.HashedPassword))
+                return BadRequest("Invalid Credentials!");
+
+
+            return Ok(CreateToken(user));
         }
-        return BadRequest();
-    }
-
-
-    [HttpPost]
-    [Route("login")]
-    public async Task<IActionResult> Login([FromBody] UserLoginDto model)
-    {
-
-        if (ModelState.IsValid)
+        catch (Exception ex)
         {
-            var user = await _userService.FetchUserData(model.Email);
-            if (user != null)
-            {
-                var encode = new HMACSHA512(user?.PasswordSalt);
-                var computedhash = encode.ComputeHash(
-                    Encoding.UTF8.GetBytes(model.Password));
+            return BadRequest(ex.Message);
 
-                if (!computedhash.SequenceEqual(user?.PasswordHash))
-                    return BadRequest("invalid credentials!");
-
-                var token = _authService.CreateToken(user);
-                return Ok(new LoginResponse("success",user,token));
-            }
-            return BadRequest("user does not exist!");
         }
-        return BadRequest();
-       
-    }
 
-
-    [HttpPost]
-    [Route("logIn/google")]
-
-    public async Task<IActionResult> GoggleLogin(ExternalLoginDto resource)
-    {
-        var payload = await _authService.VerifyGoogleToken(resource.AccessToken);
-        if (payload == null)
+        string CreateToken(User user)
         {
-         return BadRequest(new Models.ErrorModel("Invalid Google Token!", "GoogleSignIn"));
-        }
-        var user_exist = await _userService.FetchUserData(payload.Email);
-        if (user_exist == null)
-        {
-            var new_user = new User()
-            {
-                FullName = payload.GivenName + " " + payload.FamilyName,
-                Email = payload.Email,
-            };
-            var user = await _userRepository.AddUserAsync(new_user);
-            return Ok(new RegistrationResponse("success", user));
-        }
-        return Ok(new RegistrationResponse("success", user_exist));
+            List<Claim> claims = new List<Claim>{
+            new Claim(ClaimTypes.Name, user.Id.ToString())
+        };
 
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:JWTToken").Value != "" ? _config.GetSection("AppSettings:JWTToken").Value : "some key which Is strong"));
 
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Now.AddDays(45),
+                signingCredentials: cred
+            );
+            string jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return jwtToken;
+        }
     }
-
-
-
 }
-
-
-
-
-

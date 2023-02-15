@@ -1,314 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {}
+    "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
+    "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
-        "projectName": "MedAdvisor.Commons",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.Extensions.Options": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
-        "projectName": "MedAdvisor.DataAccess.MySql",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[12.0.0, )"
-            },
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[12.0.0, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.Relational": {
-              "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
-        "projectName": "MedAdvisor.Infrastructrure",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
-        "projectName": "MedAdvisor.Models",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
+        "projectUniqueName": "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
         "projectName": "MedAdvisor.Services.Okta",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\obj\\",
+        "projectPath": "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Lenovo\\Desktop\\C#\\MedTracker-G2\\src\\MedAdvisor.Services.Okta\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -316,26 +22,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj"
-              },
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
-              },
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj"
-              },
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -347,20 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Google.Apis.Auth": {
-              "target": "Package",
-              "version": "[1.58.0, )"
-            },
-            "Microsoft.AspNet.Mvc": {
-              "target": "Package",
-              "version": "[5.2.9, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[6.10.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -377,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
