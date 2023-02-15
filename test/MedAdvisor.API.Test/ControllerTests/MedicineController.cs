@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/**using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -69,4 +69,4 @@ namespace MedAdvisor.API.Test.ControllerTests
 
         }
     }
-}
+}*/

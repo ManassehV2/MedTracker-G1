@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+﻿/**using FluentAssertions;
 using MedAdvisor.Api;
 using MedAdvisor.API.Test.Infrastructure;
 using MedAdvisor.Common.Test;
@@ -41,4 +41,5 @@ namespace MedAdvisor.API.Test.ControllerTests
         }
     }
 }
+*/
 

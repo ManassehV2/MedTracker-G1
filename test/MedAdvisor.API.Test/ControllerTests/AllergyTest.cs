@@ -1,117 +1,104 @@
-﻿using FluentAssertions;
-using MedAdvisor.Api;
-using MedAdvisor.API.Test.Infrastructure;
-using MedAdvisor.Common.Test;
-using MedAdvisor.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace MedAdvisor.API.Test.ControllerTests
-{
-    public class AllergyTest : IClassFixture<TestWebApplicationFactory<Startup>>
-    {
-        private readonly TestWebApplicationFactory<Startup> _factory;
-        private readonly HttpClient _client;
-        private readonly IServiceProvider _serviceProvider;
-        public AllergyTest(TestWebApplicationFactory<Startup> factory)
-        {
-            _factory = factory;
-            _client = factory.CreateClient();
-            _serviceProvider = factory.Services;
-
-        }
-
-
-        [Fact]
-        public async Task AllergyTestGetDiagnoses()
-        {
-            var (httpStatusResponse, httpResponseBody) = await _client.ExecuteWithFullResultAsync<IEnumerable<Allergy>>(
-                HttpMethod.Get,
-                $"/Allergy",
-                string.Empty
-
-            );
-            Assert.Equal(HttpStatusCode.OK, httpStatusResponse);
-            httpResponseBody.Should().NotBeEmpty().And.HaveCount(5);
-        }
-    }
-}
-
-
-
-
-
-/**using MedAdvisor.Api.Controllers;
+﻿using MedAdvisor.Api.Controllers;
 using MedAdvisor.DataAccess.MySql;
 using MedAdvisor.Models;
-using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
+using Xunit;
 
-
-namespace MedAdvisor.API.Test.ControllerTests
+namespace MedAdvisor.Api.Tests
 {
-    public class AllergyTest
+    public class AllergyControllerTests
     {
-        private MedAdvisorDbContext _dbContext;
-        private AllergyController _controller;
-
-        [SetUp]
-        public void SetUp()
+        private readonly MedAdvisorDbContext _dbContext;
+        public AllergyControllerTests()
         {
-            // Set up the test environment, e.g. create an in-memory database and populate it with test data
             var options = new DbContextOptionsBuilder<MedAdvisorDbContext>()
-                .UseInMemoryDatabase(databaseName: "MedicalCard")
-                .Options;
+            .UseInMemoryDatabase(databaseName: "MedAdvisorTestDb")
+            .Options;
             _dbContext = new MedAdvisorDbContext(options);
-            _dbContext.AddRange(new[] {
-            new Allergy { AllergyId = 1, AllergyName = "Foo" },
-            new Allergy { AllergyId = 2, AllergyName = "Bar" }
-        });
+            SeedData();
+        }
+
+        private void SeedData()
+        {
+            var allergies = new List<Allergy>
+            {
+                new Allergy { AllergyId = 1, AllergyName = "Peanuts", UserId = 1 },
+                new Allergy { AllergyId = 2, AllergyName = "Lactose", UserId = 1 },
+                new Allergy { AllergyId = 3, AllergyName = "Pollen", UserId = 2 },
+            };
+            _dbContext.Allergies.AddRange(allergies);
             _dbContext.SaveChanges();
-
-            // Set up the API controller with the test database context
-            _controller = new AllergyController(_dbContext);
         }
 
-        [Test]
-        public void Get_ReturnsAllEntities()
+        [Fact]
+        public async Task GetAllergies_ReturnsAllAllergies()
         {
-            // Arrange: No additional setup is needed
+            // Arrange
+            var controller = new AllergyController(_dbContext);
 
-            // Act: Call the Get method of the API controller
-            var result = _controller.GetAllergys();
+            // Act
+            var result = await controller.GetAllergys();
 
-            Assert.Equals(HttpStatusCode.OK, httpStatusResponse);
-            httpResponseBody.Should().NotBeEmpty().And.HaveCount(5);
-
-            // Assert: Check that the result contains all the entities in the test database
-            var entities = Assert.IsInstanceOf<IEnumerable<Allergy>>(result);
-            Assert.AreEqual(2, entities.Count());
-            Assert.AreEqual("Foo", entities.ElementAt(0).Name);
-            Assert.AreEqual("Bar", entities.ElementAt(1).Name);
+            // Assert
+            var allergies = Assert.IsAssignableFrom<IEnumerable<Allergy>>(result.Value);
+            Assert.Equal(3, allergies.Count());
         }
 
-        [TearDown]
-        public void TearDown()
+        [Fact]
+        public async Task GetAllergy_WithValidId_ReturnsAllergy()
         {
-            // Clean up the test environment, e.g. delete the in-memory database
-            _dbContext.Database.EnsureDeleted();
-            _dbContext.Dispose();
+            // Arrange
+            var controller = new AllergyController(_dbContext);
+            var id = 1;
+
+            // Act
+            var result = await controller.GetAllergy(id);
+
+            // Assert
+            var allergy = Assert.IsType<Allergy>(result.Value);
+            Assert.Equal(id, allergy.AllergyId);
+        }
+
+        [Fact]
+        public async Task GetAllergy_WithInvalidId_ReturnsNotFound()
+        {
+            // Arrange
+            var controller = new AllergyController(_dbContext);
+            var id = 4;
+
+            // Act
+            var result = await controller.GetAllergy(id);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result.Result);
+        }
+
+        [Fact]
+        public async Task PostAllergy_WithValidAllergy_AddsAllergyToDatabase()
+        {
+            // Arrange
+            var controller = new AllergyController(_dbContext);
+            var newAllergy = new Allergy { AllergyId = 4, AllergyName = "Shellfish", UserId = 2 };
+
+            // Act
+            var result = await controller.PostAllergy(newAllergy);
+
+            // Assert
+            Assert.IsType<OkObjectResult>(result.Result);
+            Assert.Equal(4, _dbContext.Allergies.Count());
+        }
+
+        [Fact]
+        public async Task PutAllergy_WithValidId_UpdatesAllergy()
+        {
+            // Arrange
+            var controller = new AllergyController(_dbContext);
+            var id = 1;
+            var updatedAllergy = new Allergy { AllergyId = 1, AllergyName = "Tree nuts", UserId = 1 };
+
+            // Act
+            var result = await controller.PutAllergy(id, updatedAllergy);
         }
     }
 }
-
-*/

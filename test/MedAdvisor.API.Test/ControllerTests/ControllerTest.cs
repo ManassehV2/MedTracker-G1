@@ -1,99 +1,104 @@
-﻿/**using System.Text.Json;
-using System.Net;
+﻿/**using MedAdvisor.Api.Controllers;
+using MedAdvisor.DataAccess.MySql;
+using MedAdvisor.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xunit;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 
-public class UserRegistrationController : IClassFixture<TestingWebAppFactory<Program>>
+namespace MedAdvisor.Api.Tests
 {
-    private readonly HttpClient _client;
-
-    public UserRegistrationController(TestingWebAppFactory<Program> factory)
-        => _client = factory.CreateClient();
-
-
-    [Fact]
-    public async Task Register_Returns_ok()
+    [TestFixture]
+    public class AllergyControllerTests
     {
+        private MedAdvisorDbContext _dbContext;
+        private MedicineController _controller;
 
-        // Arrange
-        var new_user = new
+        [SetUp]
+        public void Setup()
         {
-            Email = "user1@example.com",
-            Password = "usser11234",
-            ConfirmPassword = "usser11234",
-            
-        };
+            var options = new DbContextOptionsBuilder<MedAdvisorDbContext>()
+                .UseInMemoryDatabase(databaseName: "test")
+                .Options;
 
-        var content = new StringContent(
-            JsonSerializer.Serialize(new_user), System.Text.Encoding.UTF8, "application/json");
+            _dbContext = new MedAdvisorDbContext(options);
+            _controller = new AllergyController(_dbContext);
+        }
 
-        //Act
-        var response = await _client.PostAsync("/api/register", content);
-
-        //assert
-        response.EnsureSuccessStatusCode();
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    }
-
-    [Fact]
-    public async Task Register_Returns_BadRequest()
-    {
-
-        // Arrange
-        var new_user = new
+        [TearDown]
+        public void TearDown()
         {
-            Email = "user@example.com",
-            Password = "string",
-            ConfirmPassword = "string",
+            _dbContext.Dispose();
+        }
 
+        [Test]
+        public async Task GetAllergys_ReturnsEmptyList_WhenNoAllergiesExist()
+        {
+            // Arrange
+            _dbContext.Allergies.RemoveRange(await _dbContext.Allergies.ToListAsync());
+            await _dbContext.SaveChangesAsync();
 
-        };
+            // Act
+            var result = await _controller.GetAllergys();
 
-        var content = new StringContent(
-            JsonSerializer.Serialize(new_user), System.Text.Encoding.UTF8, "application/json");
+            // Assert
+            Assert.IsEmpty(result.Value);
+        }
 
-        //Act
-        var response = await _client.PostAsync("/api/register", content);
+        [Test]
+        public async Task GetAllergys_ReturnsAllAllergies_WhenAllergiesExist()
+        {
+            // Arrange
+            var allergies = new List<Allergy>
+            {
+                new Allergy { AllergyId = 1, UserId = 1, AllergyName = "Peanuts" },
+                new Allergy { AllergyId = 2, UserId = 1, AllergyName = "Shellfish" },
+                new Allergy { AllergyId = 3, UserId = 2, AllergyName = "Pollen" }
+            };
+            await _dbContext.Allergies.AddRangeAsync(allergies);
+            await _dbContext.SaveChangesAsync();
 
-        //assert
-        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+            // Act
+            var result = await _controller.GetAllergys();
+
+            // Assert
+            Assert.AreEqual(allergies.Count, result.Value.Count);
+        }
+
+        [Test]
+        public async Task GetAllergy_ReturnsNotFound_WhenAllergyDoesNotExist()
+        {
+            // Arrange
+            var id = 1;
+            _dbContext.Allergies.RemoveRange(await _dbContext.Allergies.ToListAsync());
+            await _dbContext.SaveChangesAsync();
+
+            // Act
+            var result = await _controller.GetAllergy(id);
+
+            // Assert
+            Assert.IsInstanceOf<NotFoundResult>(result.Result);
+        }
+
+        [Test]
+        public async Task GetAllergy_ReturnsAllergy_WhenAllergyExists()
+        {
+            // Arrange
+            var allergy = new Allergy { AllergyId = 1, UserId = 1, AllergyName = "Peanuts" };
+            await _dbContext.Allergies.AddAsync(allergy);
+            await _dbContext.SaveChangesAsync();
+
+            // Act
+            var result = await _controller.GetAllergy(allergy.AllergyId);
+
+            // Assert
+            Assert.AreEqual(allergy, result.Value);
+        }
+
+        // Tests for PostAllergy, PutAllergy and DeleteAllergy methods can also be written using a similar approach.
     }
-
-
-    [Fact]
-    public async Task Login_Returns_ok()
-    {
-
-        // Arrange
-        var login = new { email = "user@example.com", password = "string" };
-        var content = new StringContent(
-            JsonSerializer.Serialize(login), System.Text.Encoding.UTF8, "application/json");
-
-        //Act
-        var response = await _client.PostAsync("/api/login", content);
-
-        //assert
-        response.EnsureSuccessStatusCode();
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    }
-
-
-
-    [Fact]
-    public async Task Login_Returns_BadRequest()
-    {
-
-        // Arrange
-        var login = new { email = "Wrong@example.com", password = "string" };
-        var content = new StringContent(
-            JsonSerializer.Serialize(login), System.Text.Encoding.UTF8, "application/json");
-
-        //Act
-        var response = await _client.PostAsync("/api/user/Auth/login", content);
-
-        //assert
-        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
-    }
-
 }
 */
