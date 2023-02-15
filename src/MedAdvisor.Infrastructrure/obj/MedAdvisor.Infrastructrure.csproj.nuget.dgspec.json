@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {}
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
         "projectName": "MedAdvisor.Infrastructrure",
-        "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+        "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
         "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\obj\\",
+        "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Infrastructrure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -824,11 +824,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+      "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
       "projectName": "MedAdvisor.Commons",
-      "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+      "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
       "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Commons\\obj\\",
+      "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Commons\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",

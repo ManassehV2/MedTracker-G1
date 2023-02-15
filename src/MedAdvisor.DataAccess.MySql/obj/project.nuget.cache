@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8A4FYHeAd2sEtLxFUQepqOgLElEhmV4kbiBv341sEEICyVOA2fHW+Mp8KxlGAyK4UkSNB3/ZWm1ZxW7CqpphXQ==",
+  "dgSpecHash": "D0EevupjinTIte/AztdM3pneG5u3AWf/wkxqdMDWSElKsolxNNOG7lLaBFaBrMpEtAzRIzVIS3vbOY8/eXeBLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
+  "projectFilePath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\helen\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\helen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

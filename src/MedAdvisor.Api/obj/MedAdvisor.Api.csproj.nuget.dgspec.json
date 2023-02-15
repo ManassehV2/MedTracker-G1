@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj": {}
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj": {
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj",
         "projectName": "MedAdvisor.Api",
-        "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj",
+        "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj",
         "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Api\\obj\\",
+        "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,17 +28,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj"
               },
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
               },
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
               },
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
               }
             }
           }
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
         "projectName": "MedAdvisor.Business",
-        "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
+        "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Business\\MedAdvisor.Business.csproj",
         "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Business\\obj\\",
+        "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -125,8 +125,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
               }
             }
           }
@@ -178,14 +178,14 @@
         }
       }
     },
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
         "projectName": "MedAdvisor.DataAccess.MySql",
-        "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
+        "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
         "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
+        "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -202,11 +202,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
               },
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj"
               }
             }
           }
@@ -276,14 +276,14 @@
         }
       }
     },
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
         "projectName": "MedAdvisor.Models",
-        "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
         "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\obj\\",
+        "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -357,14 +357,14 @@
         }
       }
     },
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
         "projectName": "MedAdvisor.Services.Okta",
-        "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
+        "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
         "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\obj\\",
+        "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -381,8 +381,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+                "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
               }
             }
           }

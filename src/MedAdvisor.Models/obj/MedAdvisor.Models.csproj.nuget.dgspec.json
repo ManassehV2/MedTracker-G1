@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {}
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+    "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "projectUniqueName": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
         "projectName": "MedAdvisor.Models",
-        "projectPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "projectPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
         "packagesPath": "C:\\Users\\helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Models\\obj\\",
+        "outputPath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",

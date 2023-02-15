@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X7eCy+1D6VaU0KWoLo6t1I0BNQmUxaQ9EiBKLVeSNmFjGx9wTN4XLfaDYetWOQp7Mr/oIK2FmpvYsKbHu9uk5w==",
+  "dgSpecHash": "HNLQx/BCByOMUiUvrjhBUqujaMCU3RmEizdW2KFcBptNGscXDqMPP2z5tCFuMorg6x1vV2WJPzbacqQDvexGIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
+  "projectFilePath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\helen\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\helen\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

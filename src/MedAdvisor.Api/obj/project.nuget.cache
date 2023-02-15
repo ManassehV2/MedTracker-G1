@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3+BLsbXGYEMrESMWE+6WevhoqW3exalahTyOOnLl/ZxXtOWTfUc6RDB5Aazd6tEJeiCQJ8/R7e0diQjiSYTnMQ==",
+  "dgSpecHash": "hIlSzFhMpJQk9VTuZfMm9+gVWMDlkES0KN7XBh5fz4QaSWkT68UCxbN0S3TQ4gKmbcvi5e1AeWwZkjeFwtjS/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\helen\\OneDrive\\Desktop\\New\\Working\\-MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj",
+  "projectFilePath": "C:\\Users\\helen\\Desktop\\MedTracker\\MedTracker-G1\\src\\MedAdvisor.Api\\MedAdvisor.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\helen\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\helen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
