@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {}
+    "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
+    "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
         "projectName": "MedAdvisor.Commons",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\obj\\",
+        "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Commons\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,21 +69,17 @@
         }
       }
     },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
+    "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
         "projectName": "MedAdvisor.DataAccess.MySql",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
+        "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,15 +87,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+                "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
               }
             }
           }
@@ -170,21 +160,17 @@
         }
       }
     },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
+    "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
         "projectName": "MedAdvisor.Infrastructrure",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\obj\\",
+        "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Infrastructrure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -192,15 +178,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
+              "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
+                "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
               }
             }
           }
@@ -234,21 +219,17 @@
         }
       }
     },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+    "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
         "projectName": "MedAdvisor.Models",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\obj\\",
+        "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -256,7 +237,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -294,21 +274,17 @@
         }
       }
     },
-    "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
+    "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
         "projectName": "MedAdvisor.Services.Okta",
-        "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
-        "packagesPath": "C:\\Users\\UnknownPLAYER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Services.Okta\\obj\\",
+        "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Services.Okta\\MedAdvisor.Services.Okta.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Services.Okta\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UnknownPLAYER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -316,24 +292,23 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj"
+              "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj": {
+                "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Commons\\MedAdvisor.Commons.csproj"
               },
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
+              "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj": {
+                "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.DataAccess.MySql\\MedAdvisor.DataAccess.MySql.csproj"
               },
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj"
+              "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj": {
+                "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Infrastructrure\\MedAdvisor.Infrastructrure.csproj"
               },
-              "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
-                "projectPath": "C:\\Users\\UnknownPLAYER\\Documents\\my files\\4th year\\Enterprise Application Development\\project\\9\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
+              "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj": {
+                "projectPath": "C:\\Users\\dell\\Source\\Repos\\MedTracker\\src\\MedAdvisor.Models\\MedAdvisor.Models.csproj"
               }
             }
           }
