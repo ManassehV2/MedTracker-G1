@@ -11,7 +11,7 @@ public class TestingWebAppFactory<TEntryPoint> : WebApplicationFactory<Program> 
         builder.ConfigureServices(services =>
         {
 
-        var con_string = "server=localhost;user = root;database=med-advisor;password=root";
+        var con_string = "server=localhost;  user = root;database=medadvisor;password=hiwikabt616";
         
         var options = new DbContextOptionsBuilder<AppDbContext>().UseMySql(con_string,
                             ServerVersion.AutoDetect(con_string)); 
